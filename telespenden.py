@@ -23,7 +23,7 @@ def spende():
         number = money[0].replace("€", "").replace(".", "").replace(",", ".")
         return float(number)
     else:
-        return 0
+        spende()
 
 
 def spenden():
@@ -47,7 +47,9 @@ def checktime():
     seconds = time.localtime()[5]
     timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds
     sleeptime = 1 + 24 * 60 * 60 - timeInSeconds
-    print("Ich warte jetzt: %i Sekunden." % (sleeptime))
+    TEXT = "Ich warte jetzt: %i Sekunden." % (sleeptime)
+    print(TEXT)
+    BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
     time.sleep(sleeptime)
 
 
