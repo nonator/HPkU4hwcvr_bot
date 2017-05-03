@@ -47,7 +47,7 @@ def checktime():
     seconds = time.localtime()[5]
     timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds
     sleeptime = 1 + 24 * 60 * 60 - timeInSeconds
-    TEXT = "Ich warte jetzt: %i Sekunden." % (sleeptime)
+    TEXT = "Ich warte jetzt %i:%i h." % (sleeptime//3600, (sleeptime%3600)//60)
     print(TEXT)
     BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
     time.sleep(sleeptime)
