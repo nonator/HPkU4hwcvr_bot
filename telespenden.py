@@ -18,7 +18,7 @@ def spende():
     pretty = soup.prettify()
     # Finde die Spende
     money = re.findall(REGEX, pretty)
-    if len(money) != 0:
+    if len(money[0]) != 0:
         # Formatiere so, dass ein Python Integer daraus wird
         number = money[0].replace("€", "").replace(".", "").replace(",", ".")
         return float(number)
