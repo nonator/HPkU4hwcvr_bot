@@ -14,15 +14,18 @@ BOT = telepot.Bot(TOKEN)
 
 def spende():
     r = requests.get(URL)
-    soup = BeautifulSoup(r.text, "lxml")
+    soup = BeautifulSoup(r.text, "html.parser")
     pretty = soup.prettify()
     # Finde die Spende
     money = re.findall(REGEX, pretty)
-    if len(money[0]) != 0:
+    print(money)
+    if len(money):
         # Formatiere so, dass ein Python Integer daraus wird
         number = money[0].replace("€", "").replace(".", "").replace(",", ".")
+        print(float(number))
         return float(number)
     else:
+        print('Next try...')
         spende()
 
 
@@ -47,7 +50,7 @@ def checktime():
     seconds = time.localtime()[5]
     timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds
     sleeptime = 1 + 24 * 60 * 60 - timeInSeconds
-    TEXT = "Ich warte jetzt %i:%i h." % (sleeptime//3600, (sleeptime%3600)//60)
+    TEXT = "Ich warte jetzt %i:%i h." % (sleeptime//3600, (sleeptime % 3600)//60)
     print(TEXT)
     BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
     time.sleep(sleeptime)
