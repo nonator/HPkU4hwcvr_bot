@@ -49,7 +49,7 @@ def message():
 
 
 def checktime():
-    hours = time.localtime()[3]
+    hours = time.localtime()[3] + 2
     minutes = time.localtime()[4]
     seconds = time.localtime()[5]
     timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds
@@ -61,7 +61,7 @@ def checktime():
 
 
 def main():
-    # checktime()  # Warte bis 0:00 Uhr am nächsten Tag
+    checktime()  # Warte bis 0:00 Uhr am nächsten Tag
     message()  # Schreibe um ca. 10:00 Uhr die Nachricht mit der Spendensumme
 
 

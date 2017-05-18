@@ -15,32 +15,51 @@ regex = '[0-9]{1,5}'
 def traffic():
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
-    # readable = soup.prettify()
-    # print(readable)
     tt = soup.find_all('tt')[0].text
-    # print(tt)
     numbers = re.findall(pattern=regex, string=tt)
-    # gesendet = int(numbers[0])
-    # empfangen = int(numbers[1])
-    # summe = int(numbers[2])
-    # limit = int(numbers[3])
     bleiben_noch = int(numbers[5])
-    # summary = 'Traffic:\ngesendet:          %i MB\nempfangen:  %i MB\nsumme:             %i MB\n------------------------\nbleiben noch:   %i MB' % (gesendet, empfangen, summe, bleiben_noch)
     summary = '%i MB' % (bleiben_noch)
-    # print(summary)
     return summary
+
+
+def warning():
+    return
+
+
+class stopwatch():
+    def __init__(self, day, hour, minute):
+        self.day = day
+        self.hour = hour
+        self.minute = minute
+
+    def start(self):
+        return 'Starte Intervall.'
+
+    def stop(self):
+        day = time.localtime()[2]
+        hour = time.localtime()[3]
+        minute = time.localtime()[4]
+        return 'Das muss noch implementiert werden.'
+
+    def exists():
+        return True
 
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
-    # print(msg['text'])
     if msg['text'] == '/traffic':
         bot.sendMessage(chat_id=chat_id, text=traffic())
+    elif msg['text'] == '/start':
+        watch = stopwatch(time.localtime()[2], time.localtime()[3], time.localtime()[4])
+        bot.sendMessage(chat_id=chat_id, text=watch.start())
+    elif msg['text'] == '/stop':
+        try:
+            bot.sendMessage(chat_id=chat_id, text=watch.stop())
+        except:
+            bot.sendMessage(chat_id=chat_id, text='Zuerst das Intervall mit /start starten.')
 
 
+# Keep the bot listening and running
 bot.message_loop(handle)
-# print('listening...')
-
-
 while True:
     time.sleep(10)
