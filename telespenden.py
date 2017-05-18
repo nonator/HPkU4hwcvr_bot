@@ -23,10 +23,13 @@ def spende():
         # Formatiere so, dass ein Python Integer daraus wird
         number = money[0].replace("€", "").replace(".", "").replace(",", ".")
         print(float(number))
+        BOT.sendMessage(chat_id=CHAT_ID, text='Ihnen wurde %.2f Euro gespendet.' %(float(number)))
         return float(number)
     else:
         print('Next try...')
-        spende()
+        BOT.sendMessage(chat_id=CHAT_ID, text='Ihnen wurde nicht gespendet.')
+        time.sleep(60)
+        return spende()
 
 
 def spenden():
@@ -41,7 +44,8 @@ def message():
     while True:
         TEXT = "Sie haben heute %.2f € Spenden erhalten" % (spenden())
         BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
-        time.sleep(60 * 60 * 14)  # 14 Stunden
+        # time.sleep(60 * 60 * 14)  # 14 Stunden
+        checktime()
 
 
 def checktime():
@@ -56,5 +60,9 @@ def checktime():
     time.sleep(sleeptime)
 
 
-checktime()  # Warte bis 0:00 Uhr am nächsten Tag
-message()  # Schreibe um ca. 10:00 Uhr die Nachricht mit der Spendensumme
+def main():
+    # checktime()  # Warte bis 0:00 Uhr am nächsten Tag
+    message()  # Schreibe um ca. 10:00 Uhr die Nachricht mit der Spendensumme
+
+
+main()
