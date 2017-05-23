@@ -43,7 +43,7 @@ def spenden():
 
 def message():
     while True:
-        TEXT = "Sie haben heute %.2f € Spenden erhalten" % (spenden())
+        ''' TEXT = "Sie haben heute %.2f € Spenden erhalten" % (spenden()) '''
         BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
         # time.sleep(60 * 60 * 14)  # 14 Stunden
         checktime()
@@ -55,7 +55,7 @@ def checktime():
     seconds = time.localtime()[5]
     timeInSeconds = hours * 60 * 60 + minutes * 60 + seconds
     sleeptime = 1 + 10 * 60 + 24 * 60 * 60 - timeInSeconds
-    TEXT = "Ich warte jetzt %i:%i h." % (sleeptime//3600, (sleeptime % 3600)//60)
+    ''' TEXT = "Ich warte jetzt %i:%i h." % (sleeptime//3600, (sleeptime % 3600)//60) '''
     print(TEXT)
     BOT.sendMessage(chat_id=CHAT_ID, text=TEXT)
     time.sleep(sleeptime)
