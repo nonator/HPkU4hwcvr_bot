@@ -19,6 +19,7 @@ def traffic():
     numbers = re.findall(pattern=regex, string=tt)
     bleiben_noch = int(numbers[5])
     summary = '%i MB' % (bleiben_noch)
+    print(summary)
     return summary
 
 
@@ -60,6 +61,7 @@ def handle(msg):
 
 
 # Keep the bot listening and running
+print('Started')
 bot.message_loop(handle)
 while True:
     time.sleep(10)
