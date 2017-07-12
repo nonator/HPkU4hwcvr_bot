@@ -1,3 +1,3 @@
 all:
 	clear
-	python bot.py
+	python traffic.py
