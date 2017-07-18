@@ -1,3 +1,4 @@
 [submodule "cryptobot"]
 	path = cryptobot
-	url = https://github.com/nonator/cryptobot
+	; url = https://github.com/nonator/cryptobot
+    url = git@github.com:nonator/cryptobot
