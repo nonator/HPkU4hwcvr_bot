@@ -1,6 +1,9 @@
 import telepot
-token = '342565093:AAEd2KenIzjmzxZxmSek3fxq-eQRrAWIp5Q'
-chat_id = 322086570
-bot = telepot.Bot(token)
+TOKEN = '342565093:AAEd2KenIzjmzxZxmSek3fxq-eQRrAWIp5Q'
+CHAT_ID = 322086570
+BOT = telepot.Bot(TOKEN)
 
-bot.sendMessage(chat_id=chat_id, text='Raspberry Pi is still alive.')
+BOT.sendMessage(chat_id=CHAT_ID,
+        parse_mode='Markdown',
+        disable_notification=True,
+        text='`I am still alive.`')

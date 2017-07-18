@@ -1,0 +1,3 @@
+[submodule "cryptobot"]
+	path = cryptobot
+	url = https://github.com/nonator/cryptobot
