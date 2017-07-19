@@ -1,6 +1,7 @@
 import telepot
 from time import sleep, localtime
 from datetime import datetime
+from os import getpid
 TOKEN = '342565093:AAEd2KenIzjmzxZxmSek3fxq-eQRrAWIp5Q'
 CHAT_ID = 322086570
 BOT = telepot.Bot(TOKEN)
@@ -19,4 +20,13 @@ def handle(msg):
     if msg['text'] == 'hallo':
         alive()
     return
-alive()
+
+BOT.message_loop(handle)
+# while True:
+#     sleep(1000)
+print(getpid())
+sleep(100)
+
+# for i in range(10):
+#     sleep(10)
+#     print('slept {}s'.format((i+1)*10))
