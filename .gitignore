@@ -1,8 +1,4 @@
 # Byte-compiled / optimized / DLL files
-*temp*/*
-*.txt
-temp/process_ids.txt
-temp/*
 __pycache__/
 .mypy_cache/
 *.py[cod]
