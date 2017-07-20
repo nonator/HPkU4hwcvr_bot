@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # git pull in every directory
-cd $HOME/Git/rpibot/
+cd /home/pi/Git/RaspberryPiBot
 git pull
-cd $HOME/Git/cryptobot
+cd /home/pi/Git/cryptobot
 git pull
 cd $HOME
