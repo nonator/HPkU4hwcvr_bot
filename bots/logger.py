@@ -4,4 +4,8 @@ CHAT_ID = 322086570
 BOT = Bot(TOKEN)
 
 with open('/home/pi/bot.log', 'r') as f:
-    BOT.sendDocument(chat_id=CHAT_ID, document=f, caption='bot.log')
+    BOT.sendMessage(
+            chat_id=CHAT_ID,
+            document='`bot.log`\n`-------`\n{}'.format(f.read()),
+            caption='bot.log'
+            )
