@@ -8,6 +8,8 @@ with open('/home/pi/bot.log', 'r') as f:
     BOT.sendMessage(
             chat_id=CHAT_ID,
             text='`bot.log`\n`-------`\n{}'.format(f.read()),
+            parse_mode='Markdown',
+            disable_notification=True,
             # caption='bot.log'
             )
     # BOT.sendDocument(
