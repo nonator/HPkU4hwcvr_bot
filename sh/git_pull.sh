@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 # git pull in every directory
-echo "" > /home/pi/bot.log
 cd /home/pi/Git/RaspberryPiBot
 /usr/local/bin/git stash >> /home/pi/bot.log 2>&1
 /usr/local/bin/git pull >> /home/pi/bot.log 2>&1
