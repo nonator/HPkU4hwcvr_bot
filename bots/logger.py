@@ -10,9 +10,10 @@ with open('/home/pi/bot.log', 'r') as f:
             text='`bot.log`\n`-------`\n{}'.format(f.read()),
             parse_mode='Markdown',
             disable_notification=True,
-            # caption='bot.log'
             )
-    # BOT.sendDocument(
-    #         chat_id=CHAT_ID,
-    #         document=f,
-    #         )
+    BOT.sendDocument(
+            chat_id=CHAT_ID,
+            document=f,
+            disable_notification=True,
+            caption='bot.log'
+            )
