@@ -5,7 +5,7 @@ CHAT_ID = 322086570
 BOT = Bot(TOKEN)
 
 with open('/home/pi/bot.log', 'r') as f:
-    BOT.sendMessage(
+    BOT.sendDocument(
             chat_id=CHAT_ID,
             text='`bot.log`\n`-------`\n{}'.format(f.read()),
             parse_mode='Markdown',
