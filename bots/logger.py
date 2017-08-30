@@ -15,5 +15,5 @@ with open('/home/pi/bot.log', 'r') as f:
             chat_id=CHAT_ID,
             document=f,
             disable_notification=True,
-            caption='bot.log'
+    #         caption='bot.log'
             )
