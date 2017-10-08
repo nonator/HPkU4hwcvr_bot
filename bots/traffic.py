@@ -3,9 +3,6 @@ from bs4 import BeautifulSoup
 import telepot
 import time
 import re
-from os import getpid
-with open('/home/pi/Git/RaspberryPiBot/temp/process_ids.txt', 'a') as f:
-    f.write(str(getpid())+'\n')
 
 
 token = '204922160:AAFZhl9leT5cMovHqalSbCvpAuD-uyuHtpw'
